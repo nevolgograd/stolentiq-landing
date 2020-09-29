@@ -39,7 +39,7 @@ module.exports = (env) => {
             exclude: /node_modules/
           },
           {
-            test: /\.(png|jpe?g|gif|woff(2)?)$/,
+            test: /\.(png|jpe?g|gif|svg|woff(2)?)$/,
             use: [
               {
                 loader: 'file-loader',
