@@ -4,13 +4,25 @@ import project from 'assets/images/Project-33.png';
 import woodman from 'assets/images/woodman.png';
 import startupVillage from 'assets/images/Startup-Village.png';
 import arrowDown from 'assets/images/icon-arrow-down.svg';
+import {Card} from "src/components/Card/Card";
+import data from "src/data.json";
 
-const Portfolio: React.FC = (): JSX.Element => {
+type Props = {data: {name: string, link: string, tags: string[]}[]}
+
+const Portfolio: React.FC<Props> = ({data}: Props): JSX.Element => {
+
+    const cards = data.map((item, key) => (
+        <Card name={item.name} link={item.link} tags={item.tags} key={key}/>
+    ));
+
+    console.log(cards)
+
     return (
         <section className="full-height" id="portfolio">
             <div className="full-height-inner">
                 <div className="items-wrap">
-                    <div className="item">
+                    {cards}
+                    {/*<div className="item">
                         <div className="item__header">
                             <h5>
                                 Startup Village (Director’s cut) Startup Village (Director’s
@@ -100,18 +112,8 @@ const Portfolio: React.FC = (): JSX.Element => {
                         <div className="item__text">
                             <p>music and sound design for 2d animation</p>
                         </div>
-                    </div>
-                    <div className="item">
-                        <div className="item__header">
-                            <h5>Startup Village (Director’s cut)</h5>
-                        </div>
-                        <div className="item__image">
-                            <img src="images/Startup-Village.png" alt="Startup Village" />
-                        </div>
-                        <div className="item__text">
-                            <p>music and sound design for 2d animation</p>
-                        </div>
-                    </div>
+                    </div>*/}
+
                 </div>
                 <a href="#fan" className="link-to-section down">
                     <span className="link-text">FUN</span>

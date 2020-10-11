@@ -6,24 +6,57 @@ import { Portfolio } from 'components/Portfolio/Portfolio';
 import { Fun } from 'components/Fun/Fun';
 import {Contacts} from "components/Contacts/Contacts";
 import { Main } from 'style/main';
+import data from './data.json'
 
+interface Response {
+    portfolio: any
+    fun: any
+}
 
-const Root: React.FC = () => (
-  <>
-    <Normalize />
-    <Main />
+const Root: React.FC = () => {
+    /*const [data, setData] = React.useState({
+        portfolio: [],
+        fun: []
+    });
 
-    <div id="wrapper">
-      <Header alt='STOLENTIQ STUDIO'/>
+    const getData = React.useCallback(async () => {
+        try {
+            const data = await fetch("/data.json")
+            const responseValue = await (() => {
+                if (data.ok) {
+                    return data.json();
+                } else {
+                    //@ts-ignore
+                    throw new Error('Unsuccessful response');
+                }
+            })();
+            setData(responseValue);
+        } catch (e) {
+            console.log(e)
+        }
+    }, []);*/
 
-      <Portfolio />
+    React.useEffect(() => {
+        //getData()
+    }, [])
 
-      <Fun />
+    return (
+        <>
+            <Normalize />
+            <Main />
 
-      <Contacts />
+            <div id="wrapper">
+                <Header alt='STOLENTIQ STUDIO'/>
 
-    </div>
-  </>
-);
+                <Portfolio data={data.portfolio} />
+
+                <Fun />
+
+                <Contacts />
+
+            </div>
+        </>
+    );
+};
 
 ReactDOM.render(<Root />, document.getElementById('root'));
