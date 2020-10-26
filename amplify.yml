@@ -1,20 +1,19 @@
 version: 1
-aplications:
+frontend:
   - appRoot: /stolentiq-landing
-  frontend:
-    phases:
-      preBuild:
-        commands:
-          - npm install
-      # IMPORTANT - Please verify your build commands
-      build:
-        commands:
-          - npm run dev
-    artifacts:
-      # IMPORTANT - Please verify your build output directory
-      baseDirectory: /src
-      files:
-        - '**/*'
-    cache:
-      paths:
-        - node_modules/**/*
+  phases:
+    preBuild:
+      commands:
+        - npm install
+    # IMPORTANT - Please verify your build commands
+    build:
+      commands:
+        - npm run dev
+  artifacts:
+    # IMPORTANT - Please verify your build output directory
+    baseDirectory: /src
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*
