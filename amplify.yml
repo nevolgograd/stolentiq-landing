@@ -3,7 +3,6 @@ frontend:
   phases:
     preBuild:
       commands:
-        - cd /stolentiq-landing
         - npm install
     # IMPORTANT - Please verify your build commands
     build:
@@ -11,7 +10,7 @@ frontend:
         - npm run dev
   artifacts:
     # IMPORTANT - Please verify your build output directory
-    baseDirectory: /stolentiq-landing/src
+    baseDirectory: /src
     files:
       - '**/*'
   cache:
