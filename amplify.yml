@@ -3,11 +3,11 @@ frontend:
   phases:
     preBuild:
       commands:
-        - npm install
+        - npm install --only=prod
     # IMPORTANT - Please verify your build commands
     build:
       commands:
-        - npm run dev
+        - npm run prod
   artifacts:
     # IMPORTANT - Please verify your build output directory
     baseDirectory: /src
