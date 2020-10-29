@@ -4,30 +4,20 @@ import project from 'assets/images/Project-33.png';
 import woodman from 'assets/images/woodman.png';
 import startupVillage from 'assets/images/Startup-Village.png';
 import arrowDown from 'assets/images/icon-arrow-down.svg';
-import {Card} from "src/components/Card/Card";
-import data from "src/data.json";
+import arrowUp from 'assets/images/icon-arrow-up.svg';
 
-type Props = {data: {name: string, link: string, tags: string[]}[]}
-
-const Portfolio: React.FC<Props> = ({data}: Props): JSX.Element => {
-
-    const cards = data.map((item, key) => (
-        <Card name={item.name} link={item.link} tags={item.tags} key={key}/>
-    ));
-
-    console.log(cards)
-
+const Fun: React.FC = (): JSX.Element => {
     return (
-        <section className="full-height" id="portfolio">
+        <section className="full-height" id="fan">
             <div className="full-height-inner">
+                <a href="#portfolio" className="link-to-section up">
+                    <img src={arrowUp} alt="up" />
+                    <span className="link-text">Portfolio</span>
+                </a>
                 <div className="items-wrap">
-                    {cards}
-                    {/*<div className="item">
+                    <div className="item">
                         <div className="item__header">
-                            <h5>
-                                Startup Village (Director’s cut) Startup Village (Director’s
-                                cut)
-                            </h5>
+                            <h5>Startup Village (Director’s cut)</h5>
                         </div>
                         <div className="item__image">
                             <img src={startupVillage} alt="Startup Village" />
@@ -63,7 +53,7 @@ const Portfolio: React.FC<Props> = ({data}: Props): JSX.Element => {
                             <h5>Startup Village (Director’s cut)</h5>
                         </div>
                         <div className="item__image">
-                            <img src="images/Startup-Village.png" alt="Startup Village" />
+                            <img src={startupVillage} alt="Startup Village" />
                         </div>
                         <div className="item__text">
                             <p>music and sound design for 2d animation</p>
@@ -74,7 +64,7 @@ const Portfolio: React.FC<Props> = ({data}: Props): JSX.Element => {
                             <h5>Startup Village (Director’s cut)</h5>
                         </div>
                         <div className="item__image">
-                            <img src="images/Startup-Village.png" alt="Startup Village" />
+                            <img src={startupVillage} alt="Startup Village" />
                         </div>
                         <div className="item__text">
                             <p>music and sound design for 2d animation</p>
@@ -85,7 +75,7 @@ const Portfolio: React.FC<Props> = ({data}: Props): JSX.Element => {
                             <h5>Startup Village (Director’s cut)</h5>
                         </div>
                         <div className="item__image">
-                            <img src="images/Startup-Village.png" alt="Startup Village" />
+                            <img src={startupVillage} alt="Startup Village" />
                         </div>
                         <div className="item__text">
                             <p>music and sound design for 2d animation</p>
@@ -96,32 +86,20 @@ const Portfolio: React.FC<Props> = ({data}: Props): JSX.Element => {
                             <h5>Startup Village (Director’s cut)</h5>
                         </div>
                         <div className="item__image">
-                            <img src="images/Startup-Village.png" alt="Startup Village" />
+                            <img src={startupVillage} alt="Startup Village" />
                         </div>
                         <div className="item__text">
                             <p>music and sound design for 2d animation</p>
                         </div>
                     </div>
-                    <div className="item">
-                        <div className="item__header">
-                            <h5>Startup Village (Director’s cut)</h5>
-                        </div>
-                        <div className="item__image">
-                            <img src="images/Startup-Village.png" alt="Startup Village" />
-                        </div>
-                        <div className="item__text">
-                            <p>music and sound design for 2d animation</p>
-                        </div>
-                    </div>*/}
-
                 </div>
-                <a href="#fan" className="link-to-section down">
-                    <span className="link-text">FUN</span>
+                <a href="#contacts" className="link-to-section down">
+                    <span className="link-text">contacts</span>
                     <img src={arrowDown} alt="down" />
                 </a>
             </div>
         </section>
     );
-}
+};
 
-export {Portfolio}
+export {Fun}
